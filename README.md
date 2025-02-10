@@ -75,14 +75,12 @@ Usage
 
 Once the app is running, you can:
 
-    Sign in with Google: Use Google OAuth2 to authenticate and access the user's Google Calendar.
-    Trigger Payment: When users want to make a payment, they will be redirected to the Razorpay payment gateway.
-    Success/Failure Redirection: Based on the payment outcome, the user will be redirected to a success or failure page.
+```
+1. Go the ```/influencer``` in order to sign in as inluencer and give access to your calendar.
+2. Now you can go to the ```/register``` or ```/``` in order to create a user or login.
+3. Now you can create the events and pay using razorpay.
 
-The environment variables like VITE_RAZORPAY_KEY_ID and VITE_CLIENT_ID are securely used in the app as follows:
-
-const razorpayKey = import.meta.env.VITE_RAZORPAY_KEY_ID;
-const googleClientId = import.meta.env.VITE_CLIENT_ID;
+```
 
 
 
