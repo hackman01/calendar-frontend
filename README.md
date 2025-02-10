@@ -60,24 +60,16 @@ Note:
 
 Ensure that your .env file is never committed to version control to keep your keys secure. You can add .env to your .gitignore file:
 
-# .gitignore
-.env
 
 Run the Application
 
 Now, you can run the development server using:
 
+```
 npm run dev
+```
 
-This will start the Vite development server, and you can access the application at http://localhost:3000.
-
-Build for Production (Optional)
-
-To build the project for production, run:
-
-    npm run build
-
-    This will generate the production-ready assets in the dist/ folder, which you can deploy to your hosting provider.
+This will start the Vite development server, and you can access the application at http://localhost:5173.
 
 Usage
 
