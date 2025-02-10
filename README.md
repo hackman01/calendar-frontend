@@ -26,9 +26,9 @@ Make sure you have the following installed before setting up the project:
 
 Installation Instructions
 
-    Clone the Repository
 
-    First, clone the repository to your local machine:
+First, clone the repository to your local machine:
+
 ```
 git clone https://github.com/hackman01/calendar-frontend
 
