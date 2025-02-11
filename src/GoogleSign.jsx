@@ -1,15 +1,18 @@
 import React from 'react'
 import { useGoogleLogin } from '@react-oauth/google';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const GoogleSign = () => {
 
+    const navigate = useNavigate();
     const login = useGoogleLogin({
         onSuccess: tokenResponse => {
           console.log('Access Token:', tokenResponse);
           axios.post('http://localhost:8000/api/influencer/create-influencer',{code : tokenResponse.code}).then((response)=>{
             console.log(response);
-            setUser(response.data);
+            // setUser(response.data);
+            navigate('/');
           }).catch((error)=>{
             console.log(error);
           })

@@ -19,6 +19,7 @@ const CreateEvent = ({ user }) => {
 
     const [influencers, setInfluencers] = useState([]);
     const [selectedInfluencer, setSelectedInfluencer] = useState("");
+    const [loading,setLoading] = useState(false);
 
     const orderId = useRef("")
 
@@ -55,7 +56,7 @@ const CreateEvent = ({ user }) => {
         console.log(data);
         try {
 
-            
+             setLoading(true);
 
            try{
             const response = await axios.post("http://localhost:8000/api/order/create-order",orderData)
@@ -116,6 +117,8 @@ const CreateEvent = ({ user }) => {
         } catch (error) {
             console.log(error);
             alert('Failed to initialize payment');
+        } finally {
+          setLoading(false);
         }
 
     };
@@ -206,9 +209,10 @@ const CreateEvent = ({ user }) => {
     <div className="flex justify-center">
       <button
         type="submit"
+        disabled={loading}
         className="mt-4 w-full py-3 px-6 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
       >
-        Create Event
+        {loading ? <p>Loading...</p> : <p>Create Event</p>}
       </button>
     </div>
   </form>
